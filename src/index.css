@@ -5,7 +5,32 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    background-color: black;
+    /* Webkit */
+    background-image: -webkit-gradient(radial, 30% 30%, 2, 30% 30%, 4, from(cyan), color-stop(0.1, rgba(248, 255, 128, .5)), to(transparent)),
+    -webkit-gradient(radial, 30% 30%, 1, 30% 30%, 8, from(greenyellow), color-stop(0.1, rgba(255, 186, 170, .4)), to(transparent)),
+    -webkit-gradient(radial, 30% 30%, 1, 30% 30%, 4, from(rgba(255, 255, 255, .9)), color-stop(0.05, rgba(251, 255, 186, .3)), to(transparent)),
+    -webkit-gradient(radial, 30% 30%, 0, 30% 30%, 8, from(rgba(255, 255, 255, .4)), color-stop(0.03, rgba(253, 255, 219, .2)), to(transparent));
+    /* Background Attributes */
+    background-size: 1800px 350px, 1000px 550px, 550px 550px, 700px 700px, 450px 350px;
+    background-position: 0 0, 30px 60px, 60px 30px, 130px 270px, 270px 150px;
+    /* Animation */
+    animation-name: movement;
+    animation-duration: 25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
+
+@keyframes movement {
+    from {
+        background-position: 0 0, 10px 25px, 30px 60px, 70px 80px, 10px 270px, 200px 120px, 70px 150px;
+    }
+    to {
+        background-position: -550px 0, -320px 60px, -120px 270px, -150px 150px, 300px 80px, 450px -200px;
+    }
+}
+
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

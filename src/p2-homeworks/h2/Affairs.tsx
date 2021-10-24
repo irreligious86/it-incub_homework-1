@@ -1,11 +1,12 @@
 import React from 'react'
 import Affair from './Affair'
-import { AffairType, FilterType} from './HW2'
+import {AffairType, FilterType} from './HW2'
+import classes from './Affairs.module.css'
 
 type AffairsPropsType = {
     data: Array<AffairType>
-    setFilter: ( filter: FilterType ) => void
-    deleteAffairCallback: ( _id: number  ) => void
+    setFilter: (filter: FilterType) => void
+    deleteAffairCallback: (_id: number) => void
 }
 
 function Affairs(props: AffairsPropsType) {
@@ -17,20 +18,41 @@ function Affairs(props: AffairsPropsType) {
         />
     ))
 
-    const setAll = () => { props.setFilter('all') }
-    const setHigh = () => { props.setFilter('high') }
-    const setMiddle = () => { props.setFilter('middle') }
-    const setLow = () => { props.setFilter('low') }
+    const setAll = () => {
+        props.setFilter('all')
+    }
+    const setHigh = () => {
+        props.setFilter('high')
+    }
+    const setMiddle = () => {
+        props.setFilter('middle')
+    }
+    const setLow = () => {
+        props.setFilter('low')
+    }
 
     return (
-        <div>
+        <div className={classes['mapped-affairs-box']}>
 
             {mappedAffairs}
 
-            <button onClick={setAll}>All</button>
-            <button onClick={setHigh}>High</button>
-            <button onClick={setMiddle}>Middle</button>
-            <button onClick={setLow}>Low</button>
+            <button
+                className={`${classes['btn']} ${classes['btn-filter']}`} onClick={setAll}
+            >All
+            </button>
+            <button
+                className={`${classes['btn']} ${classes['btn-filter']}`}
+                onClick={setHigh}
+            >High
+            </button>
+            <button
+                className={`${classes['btn']} ${classes['btn-filter']}`} onClick={setMiddle}
+            >Middle
+            </button>
+            <button
+                className={`${classes['btn']} ${classes['btn-filter']}`} onClick={setLow}
+            >Low
+            </button>
         </div>
     )
 }
